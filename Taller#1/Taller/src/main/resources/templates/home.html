@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=http://www.thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Informacion personal</h1>
+    <br>
+    <p>Nombre: </p><p th:text ="${username}">Daniel</p>
+    <p>fecha: </p><p  th:text ="${fecha}">hoys</p>
+    <table th:if = "${admin}" th:each = "user : ${usuarios}" >
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Fecha de contratacion</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text = "${user.username}"></td>
+                <td th:text = "${user.fechaContratacion}" >Hoy</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

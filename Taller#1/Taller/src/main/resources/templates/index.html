@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=http://www.thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/SingupSrv" method="post">
+        <label>Username: </label><input type="text" name="username">
+        <label>Password: </label><input type="password" name="password">
+        <label>Rol: </label>
+        <label>admin </label><input type="radio" name="rol" value="admin">
+        <label>user </label><input type="radio" name="rol" value="user">
+        <input type="submit" value="Enviar">
+    </form>
+   	<p>Si ya tienes una cuenta</p><a href="/login">Inicia sesion</a>
+    <ul th:if = "${hasError}" th:each = "error: ${errores}">
+    	<li th:text = "${error}"></li>
+	</ul>
+</body>
+</html>
